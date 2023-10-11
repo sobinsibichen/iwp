@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Reviews</title>
+    <style>
+        /* Body with blue background */
+        body {
+            background-color: #3498db;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Page title style */
+        h1 {
+            background-color: #fff;
+            color: #3498db;
+            padding: 20px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        /* Form with white background */
+        form {
+        background-color: #fff;
+        width: 50%; /* Set the width to 50% */
+        margin: 0 auto; /* Center the form horizontally */
+        padding: 20px;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        text-align: left;
+    }
+
+        /* Center align text within form */
+        label {
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Style the input fields */
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Style the submit button */
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style the submit button on hover */
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        /* Style the reviews div */
+        .reviews {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Reviews</h1>
+    <form action="submit_review.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="review">Review:</label><br>
+        <textarea id="review" name="review" rows="4" required></textarea><br><br>
+
+        <input type="submit" value="Submit Review">
+    </form>
+    <div class="reviews">
+        <h2>Previous Reviews</h2>
+        <?php include "display_reviews.php"; ?>
+    </div>
+</body>
+</html>
